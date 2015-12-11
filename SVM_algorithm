@@ -1,0 +1,10 @@
+% training
+tic; 
+model = svmtrain(trainLabel, trainSet, '-s 0 -t 0');
+t1 = toc;
+% classification
+tic;
+[predicted_label, accuracy, decision_values]=svmpredict(testLabel, testSet, model);
+t2 = toc;
+disp(num2str(t1));
+disp(num2str(t2));
